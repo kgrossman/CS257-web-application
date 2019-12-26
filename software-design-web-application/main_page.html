@@ -1,0 +1,314 @@
+<!--
+ main_page.html
+ Authors: Kate Grossman and Matt Stritzel
+ Date: May 19, 2019
+ CS257-Eric Alexander
+ -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='main.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+        <title>US Deaths</title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <h1 onclick="return_home()"> US DEATHS </h1>
+
+        </header>
+
+        <section id="main">
+
+            <h1>What would you like to know?</h1>
+
+
+            <form id="main_search" action="{{ url_for('get_table') }}">
+
+                <select id = "cause_of_death" name="main_search_cause">
+
+                    <option value="" disabled selected>Choose a Cause of Death</option>
+
+                    <option value="Kidney disease"> Kidney disease </option>
+
+                    <option value="Suicide"> Suicide </option>
+
+                    <option value="Alzheimer's disease"> Alzheimer's disease </option>
+
+                    <option value="Influenza and pneumonia"> Influenza and pneumonia </option>
+
+                    <option value="Diabetes"> Diabetes </option>
+
+                    <option value="CLRD"> CLRD </option>
+
+                    <option value="Unintentional injuries"> Unintentional injuries </option>
+
+                    <option value="Stroke"> Stroke </option>
+
+                    <option value="Heart disease"> Heart disease </option>
+
+                    <option value="Cancer"> Cancer </option>
+
+                </select>
+
+
+                <select id="state" name="main_search_state">
+
+                    <option value="" disabled selected>State</option>
+
+                    <option value="all"> All </option>
+
+                    <option value="Alabama">Alabama</option>
+
+                    <option value="Alaska">Alaska</option>
+
+                    <option value="Arizona">Arizona</option>
+
+                    <option value="Arkansas">Arkansas</option>
+
+                    <option value="California">California</option>
+
+                    <option value="Colorado">Colorado</option>
+
+                    <option value="Connecticut">Connecticut</option>
+
+                    <option value="Deleware">Delaware</option>
+
+                    <option value="District of Columbia">District Of Columbia</option>
+
+                    <option value="Florida">Florida</option>
+
+                    <option value="Georgia">Georgia</option>
+
+                    <option value="Hawaii">Hawaii</option>
+
+                    <option value="Idaho">Idaho</option>
+
+                    <option value="Illinois">Illinois</option>
+
+                    <option value="Indiana">Indiana</option>
+
+                    <option value="Iowa">Iowa</option>
+
+                    <option value="Kansas">Kansas</option>
+
+                    <option value="Kentucky">Kentucky</option>
+
+                    <option value="Louisiana">Louisiana</option>
+
+                    <option value="Maine">Maine</option>
+
+                    <option value="Maryland">Maryland</option>
+
+                    <option value="Massachusetts">Massachusetts</option>
+
+                    <option value="Michigan">Michigan</option>
+
+                    <option value="Minnesota">Minnesota</option>
+
+                    <option value="Mississippi">Mississippi</option>
+
+                    <option value="Missouri">Missouri</option>
+
+                    <option value="Montana">Montana</option>
+
+                    <option value="Nebraska">Nebraska</option>
+
+                    <option value="Nevada">Nevada</option>
+
+                    <option value="New Hampshire">New Hampshire</option>
+
+                    <option value="New Jersey">New Jersey</option>
+
+                    <option value="New Mexico">New Mexico</option>
+
+                    <option value="New York">New York</option>
+
+                    <option value="North Carolina">North Carolina</option>
+
+                    <option value="North Dakota">North Dakota</option>
+
+                    <option value="Ohio">Ohio</option>
+
+                    <option value="Oklahoma">Oklahoma</option>
+
+                    <option value="Oregon">Oregon</option>
+
+                    <option value="Pennsylvania">Pennsylvania</option>
+
+                    <option value="Rhode Island">Rhode Island</option>
+
+                    <option value="South Carolina">South Carolina</option>
+
+                    <option value="South Dakota">South Dakota</option>
+
+                    <option value="Tennessee">Tennessee</option>
+
+                    <option value="Texas">Texas</option>
+
+                    <option value="Utah">Utah</option>
+
+                    <option value="Vermont">Vermont</option>
+
+                    <option value="Virginia">Virginia</option>
+
+                    <option value="Washington">Washington</option>
+
+                    <option value="West Virginia">West Virginia</option>
+
+                    <option value="Wisconsin">Wisconsin</option>
+
+                    <option value="Wyoming">Wyoming</option>
+
+                </select>
+
+
+
+                <select id="start_year" name="main_search_start_year">
+
+                    <option value="" disabled selected>Start Year</option>
+
+                    <option value="1999"> 1999 </option>
+
+                    <option value="2000"> 2000 </option>
+
+                    <option value="2001"> 2001 </option>
+
+                    <option value="2002"> 2002 </option>
+
+                    <option value="2003"> 2003 </option>
+
+                    <option value="2004"> 2004 </option>
+
+                    <option value="2005"> 2005 </option>
+
+                    <option value="2006"> 2006 </option>
+
+                    <option value="2007"> 2007 </option>
+
+                    <option value="2008"> 2008 </option>
+
+                    <option value="2009"> 2009 </option>
+
+                    <option value="2010"> 2010 </option>
+
+                    <option value="2011"> 2011 </option>
+
+                    <option value="2012"> 2012 </option>
+
+                    <option value="2013"> 2013 </option>
+
+                    <option value="2014"> 2014 </option>
+
+                    <option value="2015"> 2015 </option>
+
+                    <option value="2016"> 2016 </option>
+
+
+                </select>
+
+
+                <select id="end_year" name="main_search_end_year">
+
+                    <option value="" disabled selected>End Year</option>
+
+                    <option value="1999"> "1999" </option>
+
+                    <option value="2000"> 2000 </option>
+
+                    <option value="2001"> 2001 </option>
+
+                    <option value="2002"> 2002 </option>
+
+                    <option value="2003"> 2003 </option>
+
+                    <option value="2004"> 2004 </option>
+
+                    <option value="2005"> 2005 </option>
+
+                    <option value="2006"> 2006 </option>
+
+                    <option value="2007"> 2007 </option>
+
+                    <option value="2008"> 2008 </option>
+
+                    <option value="2009"> 2009 </option>
+
+                    <option value="2010"> 2010 </option>
+
+                    <option value="2011"> 2011 </option>
+
+                    <option value="2012"> 2012 </option>
+
+                    <option value="2013"> 2013 </option>
+
+                    <option value="2014"> 2014 </option>
+
+                    <option value="2015"> 2015 </option>
+
+                    <option value="2016"> 2016 </option>
+
+                </select>
+
+                <input type="submit" value="Search">
+
+        </form>
+
+        </section>
+
+        <section>
+            
+            <h1> Some questions you may have: </h1>
+
+            <li> What is the most common cause of death in your state? Enter Your State:
+                <input type="text" id="state_text">
+                <input type="submit" value="Go" onclick="go_search()">
+            </li>
+            
+            <li> Has death from a certain cause become more or less common over time? Enter a cause:
+                <input type="text" id="cause_text">
+                <input type="submit" value="Go" onclick="go_three_search()">
+            </li>
+            
+            <li> Find out which states have the most deaths:
+                <input type="submit" value="Go" onclick="go_two_search()">
+            </li>
+            
+            <br>
+            <br>
+            
+            <a href="/"> RETURN TO SEARCH </a>
+            
+        </section>
+        <aside>
+
+            <h1> For more information: </h1>
+
+            <a href="https://www.cdc.gov/aging/aginginfo/alzheimers.htm">Alzheimer's </a>
+            <br>
+            <a href="https://www.cdc.gov/flu/index.htm">Influenza </a>
+            <br>
+            <a href="https://www.nimh.nih.gov/health/publications/suicide-faq/index.shtml"> Suicide </a>
+            <br>
+            <a href="https://www.cdc.gov/diabetes/home/index.html"> Diabetes </a>
+            <br>
+            <a href="https://www.verywellhealth.com/what-is-chronic-lower-respiratory-disease-2224212"> Chronic lower respiratory diseases </a>
+            <br>
+            <a href="https://www.aans.org/en/Patients/Neurosurgical-Conditions-and-Treatments/Cerebrovascular-Disease"> Cerebrovascular Diseases </a>
+            <br>
+            <a href="https://www.cdc.gov/genomics/resources/diseases/heart.htm"> Diseases of Heart </a>
+            <br>
+            <a href="https://kidshealth.org/Nemours/en/parents/az-neoplasm-malignant.html"> Malignant Neoplasms </a>
+            
+            <h1> README </h1>
+            <a href="README.html"> README.html </a>
+        </aside>
+
+    </body>
+
+</html>

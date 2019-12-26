@@ -1,0 +1,70 @@
+<!--README-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='main.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+        <title>US Deaths</title>
+
+    </head>
+
+    <body>
+
+        <header><h1>README</header>
+
+
+        <p>Kate Grossman and Matt Stritzel
+        <p>Thursday 23, 2019
+        <p>CS257 prof. Eric Alexandar
+
+        <h2>Description of our project:</h2>
+        <p> This web application allows a user to search through data on causes of death
+        in the United States. The data that we focus on includes the number of deaths
+        for specificed causes of death, for each state in the United States as well as
+        for the whole country, and for each year between 1999 and 2016.
+
+        <h2>Our web app features:</h2>
+          <p>-- Main search method: The user inputs a cause of death and state and specifies
+                the range of the years that they want to search through. When the user clicks
+                on the search table, they are presented with a table with columns for the year
+                and for the number of deaths resulting from their specified cause of death
+                in their specified state.
+          <p>-- Search for the most deadly cause of death in a state: The user inputs a state
+                and is presented with a table of the top ten causes of death in that state
+                including the deathtoll.
+          <p>-- Search for with state has the most deaths: The user presses the "go" button
+                and recieves a table including a list of states and their overall deathtolls
+                in order from greatest to least.
+          <p>-- Search for a national trend: The user inputs a cause of death and is
+                presented with a table including the years and their corresponding deathtolls
+                for the specified cause.
+          <p>-- Resource links: Located in the aside, their are links to more information
+                about the causes of death.
+          <p>-- Return to home button: Brings the user back to the main page.
+
+        <h2>Our dataset:</h2>
+          <p>Name: NCHS - Leading Causes of Death: United states
+          <p>Owner of data: Center for disease control and prevention
+          <p>
+            <a href = https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013/resource/0e603f1d-31bf-4809-8f10-a994b305b379> Link to download data </a>
+          <p>
+            <a href = https://catalog.data.gov/dataset/age-adjusted-death-rates-for-the-top-10-leading-causes-of-death-united-states-2013> Link to site (includes liscensing information)</a>
+
+        <h2>A feature we didn't have time to implement:</h2>
+          <p>A feature that we did not have time to implement was a third
+            column in our national trend data table that would include the
+            percent that the deathtoll rose or fell.
+
+        <h2>Creating our database:</h2>
+          <p>Our original data set was in a CSV file. We used Matt's directory
+            for our database (stritzelm). We used PostgreSQL to create a table of
+            the four columns of the data that we wanted: year, cause, state, and
+            deathcount by selecting those specific columns from the csv file to
+            copy over. We did not write any scripts to pre-process our data.
+            
+    </body>
+    
+</html>

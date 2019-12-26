@@ -1,0 +1,12 @@
+Group: Kate Grossman and Matt Stritzel
+Our project is contained on Matt's database
+
+Files:
+api_tests.py: contains our unit tests for our api.
+api.py: contains the functions necessary for the queries our website will support.
+  This file uses Flask and SQL for routing and sorting through the data.
+causes.csv: contains all of the raw data.
+flask_sample.py: example of using flask.
+main_page.html: contains the html code for the main page of the website.
+main.css: contains the css code for the main page of the website.
+projectProposal.pdf: the proposal for this project.

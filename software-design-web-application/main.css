@@ -1,0 +1,82 @@
+body {
+	background-color: #f4fffe;
+}
+
+body header {
+  background-color: #74b7f7;
+	padding: 11px;
+	color: black;
+	font-size: 40px;
+	font-family: Cambria;
+	font-weight: bold;
+}
+
+
+section {
+	width: 75%;
+	height: 100%;
+	float: left;
+	padding: 2px;
+	font-size: 18px;
+}
+
+
+section h1 {
+	font-weight: bold;
+ 	text-align: center;
+	font-size: 30px;
+}
+
+
+aside {
+	float: right;
+	width: 20.5%;
+	background-color: #ffe88e;
+	height: 100%;
+	right: 8px;
+	border: 2px solid black;
+	padding: 5px;
+	top: 80px;
+	position: absolute;
+}
+
+
+aside h1 {
+	font-weight: bold;
+	text-align: center;
+}
+
+aside a {
+	padding: 10px;
+	margin: 2px 0;
+	display: inline-block;
+}
+
+select {
+	width: 100%;
+	padding: 5px 5px;
+	margin: 2px 0;
+	font-size: 12px;
+	display: inline-block;
+}
+
+input {
+	margin: 10px 0;
+	font-size: 20px;
+}
+
+li {
+	margin: 0px 0;
+	font-size: 17px;
+}
+
+table {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #e5ffcc;
+}
+
+
+th {
+	font-weight: bold;
+}
